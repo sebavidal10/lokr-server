@@ -1,0 +1,373 @@
+{
+  "info": {
+    "_postman_id": "3f156de2-6037-4bf7-997e-38a489c507f5",
+    "name": "Lokr",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "resources",
+      "item": [
+        {
+          "name": "list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/resources",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["resources"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"web2\",\n    \"url\": \"www.web2.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/resources",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["resources"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"user3@mail.com\",\n    \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/register",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refresh-token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"user@mail.com\",\n    \"refreshToken\": \"61926ab94f1236bccbab5976.175e8feec20688a82ce11ca9406aed76efe2d6f01d0acb273b77a2534aade7f5b8e6ec690c82be8b\"\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/refresh-token",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["auth", "refresh-token"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"user@mail.com\",\n    \"password\": \"111qqq\"\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/login",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "send-password-reset",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"user@mail.com\"\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/send-password-reset",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["auth", "send-password-reset"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset-password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"user@mail.com\",\n    \"password\": \"111qqq\",\n    \"resetToken\": \"61926ab94f1236bccbab5976.a7bbf299ecca2939d1bc4d62f21a78298ba4e86d698d5aa7e3d537819c56ebfb1272a7fd6c0f7a18\"\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/reset-password",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["auth", "reset-password"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzgzOTEzODEsImlhdCI6MTYzODM4Nzc4MSwic3ViIjoiNjFhN2M3ODRlNmNiZWRmYWU0N2UyMmY3In0.BS5TqaUqsPlJHM8H_Ajv_xpUBUbxiRww-RBAah3YLHM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/users",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "ocho@mail.com",
+                  "disabled": true
+                },
+                {
+                  "key": "role",
+                  "value": "user",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "123456",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzgzOTEzODEsImlhdCI6MTYzODM4Nzc4MSwic3ViIjoiNjFhN2M3ODRlNmNiZWRmYWU0N2UyMmY3In0.BS5TqaUqsPlJHM8H_Ajv_xpUBUbxiRww-RBAah3YLHM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/users",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "ocho@mail.com",
+                  "disabled": true
+                },
+                {
+                  "key": "role",
+                  "value": "user",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "123456",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": ":userId",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzgzOTEzODEsImlhdCI6MTYzODM4Nzc4MSwic3ViIjoiNjFhN2M3ODRlNmNiZWRmYWU0N2UyMmY3In0.BS5TqaUqsPlJHM8H_Ajv_xpUBUbxiRww-RBAah3YLHM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/users",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "ocho@mail.com",
+                  "disabled": true
+                },
+                {
+                  "key": "role",
+                  "value": "user",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "123456",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzcwMDA4NjAsImlhdCI6MTYzNjk5OTk2MCwic3ViIjoiNjE5MjZhYjk0ZjEyMzZiY2NiYWI1OTc2In0.RpoWJannZrjNYURVSg99tkDxybcancd7MZN-1ny35vs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/users",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/status",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["status"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
